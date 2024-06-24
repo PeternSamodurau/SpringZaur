@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <context:property-placeholder location="classpath:myApp.properties"/>
+
+    <bean id="myPet" class="springMy._1_inversion_of_control.Dog"/>  <!-- меняем здесь на Dog или Cat  -->
+
+    <bean id="myPersonConstructor" class="springMy._2_dependency_injection.PersonConstructor">
+        <constructor-arg ref="myPet"/>
+    </bean>
+
+    <bean id="myPersonSet" class="springMy._2_dependency_injection.PersonSet">
+        <property name="pet" ref="myPet"/>
+    </bean>
+    <bean id="myPersonVariables" class="springMy._2_dependency_injection.PersonVariables">
+        <property name="pet" ref="myPet"/>
+        <property name="surname" value="${person.surname}"/>  <!-- из myApp.properties  -->
+        <property name="age" value="53"/>                     <!-- из myApp.properties  -->
+    </bean>
+
+
+</beans>
