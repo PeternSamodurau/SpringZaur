@@ -11,7 +11,7 @@
     <context:property-placeholder location="classpath:myApp.properties"/>
 
     <bean id="myPet"
-          class="springMy._4_init_and_destroy_methods.Dog"
+          class="springMy_IoC_DI._4_init_and_destroy_methods.Dog"
           init-method="init"
           destroy-method="destroy"
           scope="prototype">

@@ -9,8 +9,6 @@
 
 
     <context:property-placeholder location="classpath:myApp.properties"/>
-
-    <!--<bean id="myPet" class="springMy._3_bean_scope.Dog" scope="singleton" /> -->
-    <bean id="myPet" class="springMy_IoC_DI._3_bean_scope.Dog" scope="prototype" />
+    <context:component-scan base-package="springMy_IoC_DI._5_configuration_with_annotation._5.Scope_PostConstruct_PreDestroy"/>
 
 </beans>
