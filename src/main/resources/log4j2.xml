@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="WARN">
+    <appenders>
+        <File name="InfoSpringZaur" fileName="C:\Users\АВС\IdeaProjects\SpringZaur\src\main\resources\log\info.log" append="false">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36}:%L - %msg%n"/>
+            <Filters>
+                <ThresholdFilter level="error" onMatch="DENY" onMismatch="NEUTRAL"/>
+            </Filters>
+        </File>
+        <File name="ErrorsSpringZaur" fileName="C:\Users\АВС\IdeaProjects\SpringZaur\src\main\resources\log\errors.log" append="false">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36}:%L - %msg%n"/>
+        </File>
+    </appenders>
+
+
+    <loggers>
+        <Logger name="SpringZaur" level="info" additivity="false">
+            <appender-ref ref="InfoSpringZaur" level="info"/>
+            <appender-ref ref="ErrorsSpringZaur" level="error"/>
+        </Logger>
+
+        <root level="info">
+            <appender-ref ref="InfoSpringZaur" level="info"/>
+            <appender-ref ref="ErrorsSpringZaur" level="error"/>
+        </root>
+    </loggers>
+</configuration>
