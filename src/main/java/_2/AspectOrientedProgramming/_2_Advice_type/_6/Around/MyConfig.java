@@ -1,0 +1,13 @@
+package _2.AspectOrientedProgramming._2_Advice_type._6.Around;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.context.annotation.PropertySource;
+
+@Configuration
+@PropertySource("classpath:myApp.properties")
+@ComponentScan("_2.AspectOrientedProgramming._2_Advice_type._6.Around")
+@EnableAspectJAutoProxy
+public class MyConfig {
+}
