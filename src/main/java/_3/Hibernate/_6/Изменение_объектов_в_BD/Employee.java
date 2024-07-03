@@ -1,10 +1,11 @@
-package _3.Hibernate._5.Получение_объектов_из_BD;
+package _3.Hibernate._6.Изменение_объектов_в_BD;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 
@@ -21,6 +22,7 @@ public class Employee {
     private int id;
 
     @Column(name = "name")
+    @Value("${employee.name}")
     private String name;
 
     @Column(name = "surname")

@@ -1,20 +1,18 @@
-package _3.Hibernate._5.Получение_объектов_из_BD;
+package _3.Hibernate._8.Типы_отношений_таблиц._2.One_to_Many;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.stereotype.Component;
-
 
 @Entity
-@Table(name = "employees")
+@Table(name = "employees1")
 @Log4j2
 @Getter
 @Setter
 @ToString
-public class Employee {
+public class Employee2 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -26,19 +24,16 @@ public class Employee {
     @Column(name = "surname")
     private String surname;
 
-    @Column(name = "department")
-    private String department;
-
     @Column(name = "salary")
     private int salary;
 
-    public Employee() {
-    }
-
-    public Employee(String name, String surname, String department, int salary) {
+    public Employee2(String name, String surname, int salary) {
         this.name = name;
         this.surname = surname;
-        this.department = department;
         this.salary = salary;
     }
+
+    public Employee2() {
+    }
+
 }
