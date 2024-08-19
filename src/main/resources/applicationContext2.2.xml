@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--обращение к переменным в myApp.properties-->
+    <context:property-placeholder location="classpath:myApp.properties"/>
+    <!-- сначала происходит создание всех бинов в applicationContext2.2.xml-->
+    <bean id="myPetDog" class="_1.IoC_and_DI._2_dependency_injection.variables.Dog"/>
+    <bean id="myPetCat" class="_1.IoC_and_DI._2_dependency_injection.variables.Cat"/>
+
+    <bean id="myPerson1" class="_1.IoC_and_DI._2_dependency_injection.variables.Person">
+        <property name="pet" ref="myPetDog"/>             <!-- внедрение зависимости c помощью setter-->
+        <property name="name" value="Vasya"/>             <!-- внедрение зависимости c помощью variable-->
+        <property name="age" value="5"/>                   <!-- внедрение зависимости c помощью variable-->
+    </bean>
+    <bean id="myPerson2" class="_1.IoC_and_DI._2_dependency_injection.variables.Person">
+        <property name="pet" ref="myPetCat"/>             <!-- внедрение зависимости c помощью setter-->
+        <property name="name" value="${person.surname}"/>              <!-- внедрение зависимости c помощью variable из properties-->
+        <property name="age" value="${person.age}"/>                    <!-- внедрение зависимости c помощью variable из properties-->
+    </bean>
+
+
+</beans>

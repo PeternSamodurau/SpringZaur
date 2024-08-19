@@ -2,19 +2,32 @@ package _1.IoC_and_DI._1_inversion_of_control_;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+// В контексте Inversion of Control (IoC), инверсия означает переворот или изменение направления контроля между объектами.
+//В традиционном программировании, объекты создаются и управляются самостоятельно, что означает,
+// что они контролируют свою собственную логику и зависимость от других объектов.
+// Это можно представить как "нисходящий" контроль, где объекты сами решают, как им взаимодействовать с другими объектами.
+//В IoC, инверсия контроля означает, что объекты больше не контролируют свою собственную логику и зависимость от других объектов.
+// Вместо этого, IoC контейнер предоставляет объектам необходимые зависимости и управляет их взаимодействием.
+// Это можно представить как "восходящий" контроль, где IoC контейнер контролирует взаимодействие между объектами.
+//В этом смысле, инверсия контроля означает, что:
+//   * Объекты больше не создают и управляют своими собственными зависимостями.
+//   * Объекты больше не знают о существовании других объектов, с которыми они взаимодействуют.
+//  * IoC контейнер предоставляет объектам необходимые зависимости и управляет их взаимодействием.
+
+// Это переворот или изменение направления контроля между объектами, от "нисходящего" контроля к "восходящему" контролю.
+
 public class Main {
     public static void main(String[] args) {
-        Pet dog = new Dog();
-        dog.say();
-        Pet cat = new Cat();
-        cat.say();
-        System.out.println("_________________________________");
 
-        // в конфиг файле можно управлять вызывая животными не писать код, создавать обьекты будет spring
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("/applicationContext.xml"); // это создали контейнер
+        // создадим Spring container - ApplicationContext
+        // объекты будут созданы при первом обращении к бинам по их id в конфигурационном файле applicationContext1.xml
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext1.xml");
 
-        Pet pet = context.getBean("myPet", Pet.class);
-        pet.say();
+        Pet pet1 = context.getBean("myPetDog", Pet.class);
+        pet1.say();
+
+        Pet pet2 = context.getBean("myPetCat", Pet.class);
+        pet2.say();
 
         context.close();
     }

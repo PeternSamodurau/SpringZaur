@@ -8,9 +8,9 @@
            http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-    <context:property-placeholder location="classpath:myApp.properties"/>
 
-    <!--<bean id="myPet" class="_1.IoC_and_DI._3_bean_scope.Dog" scope="singleton" />-->  <!-- создается 1 экземпляр bean -->
-    <bean id="myPet" class="_1.IoC_and_DI._3_bean_scope.Dog" scope="prototype" />    <!-- создается N экземпляров bean -->
+    <bean id="myPetDog" class="_1.IoC_and_DI._1_inversion_of_control_.Dog"/>
+    <bean id="myPetCat" class="_1.IoC_and_DI._1_inversion_of_control_.Cat"/>
+
 
 </beans>

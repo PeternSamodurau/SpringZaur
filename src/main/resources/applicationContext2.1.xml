@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+
+    <!-- сначала происходит создание всех бинов в applicationContext2.1.xml-->
+    <bean id="myPetDog" class="_1.IoC_and_DI._2_dependency_injection.setter.Dog"/>
+    <bean id="myPetCat" class="_1.IoC_and_DI._2_dependency_injection.setter.Cat"/>
+
+    <bean id="myPerson1" class="_1.IoC_and_DI._2_dependency_injection.setter.Person">
+        <property name="pet" ref="myPetDog"/>             <!-- внедрение зависимости c помощью setter-->
+    </bean>
+    <bean id="myPerson2" class="_1.IoC_and_DI._2_dependency_injection.setter.Person">
+        <property name="pet" ref="myPetCat"/>             <!-- внедрение зависимости c помощью setter-->
+    </bean>
+
+
+</beans>

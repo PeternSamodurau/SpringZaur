@@ -12,8 +12,8 @@ public class Main {
         Dog dog2 = context.getBean("myPet", Dog.class);
         dog2.setName("Strelka");
 
-        System.out.println(dog2.getName());  // будет 2 Strelka  мы меняем состояние всех обьектов
-        System.out.println(dog1.getName());
+        System.out.println(dog1.getName());  // будет 2 Strelka  мы меняем состояние всех обьектов при scope="singleton"
+        System.out.println(dog2.getName());
 
         System.out.println(dog1);
         System.out.println(dog2);

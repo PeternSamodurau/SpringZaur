@@ -1,8 +1,9 @@
 package _1.IoC_and_DI._3_bean_scope;
 
 import _1.IoC_and_DI._1_inversion_of_control_.Pet;
+import lombok.ToString;
 
-
+@ToString
 public class Dog implements Pet {
     private String name;
 
