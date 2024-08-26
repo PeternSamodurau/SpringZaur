@@ -6,19 +6,18 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Main {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
-//
-//        Pet cat1 = context.getBean("catBean", Pet.class);
-//        cat1.say();
-//        Pet cat2 = context.getBean("catBean", Pet.class);
-//        cat2.say();
-//
-//        System.out.println("Переменные ссылаются на один и тот же объект? " + (cat1 == cat2));
 
-        Person person1 = context.getBean("personBean", Person.class);
+        Pet cat = context.getBean("catBean", Pet.class);
+        cat.say();
+        Pet dog = context.getBean("dogBean", Pet.class);
+        dog.say();
+
+
+        Person person1 = context.getBean("personBean1", Person.class);
         person1.callYourPet();
-        Person person2 = context.getBean("personBean", Person.class);
+        Person person2 = context.getBean("personBean2", Person.class);
         person2.callYourPet();
-        System.out.println("Переменные ссылаются на один и тот же объект? " + (person1 == person2));
+
         context.close();
     }
 }

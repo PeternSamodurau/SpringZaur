@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext3.xml");
-        //сразу создаются бины даже если мы их не запрашиваем и он общий для всех dog
+        //при scope="singleton", сразу создаются бины даже если мы их не запрашиваем и он общий для всех dog
         Dog dog1 = context.getBean("myPet", Dog.class);
         dog1.setName("Belka");
 

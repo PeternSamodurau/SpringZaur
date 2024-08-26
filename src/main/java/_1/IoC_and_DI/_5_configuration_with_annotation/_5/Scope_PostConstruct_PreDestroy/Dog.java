@@ -1,11 +1,11 @@
 package _1.IoC_and_DI._5_configuration_with_annotation._5.Scope_PostConstruct_PreDestroy;
 
+import lombok.ToString;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import _1.IoC_and_DI._1_inversion_of_control_.Pet;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-
+@ToString
 @Component("dogBean")
 @Scope("prototype")               //если singleton, то один и тот же объект
 public class Dog implements Pet {

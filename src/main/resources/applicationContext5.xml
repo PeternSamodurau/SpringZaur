@@ -9,6 +9,6 @@
 
 
     <context:property-placeholder location="classpath:myApp.properties"/>
-    <context:component-scan base-package="springMy_IoC_DI._5_configuration_with_annotation._2.Autowired"/>
+    <context:component-scan base-package="_1.IoC_and_DI._5_configuration_with_annotation._2.Autowired"/>
 
 </beans>

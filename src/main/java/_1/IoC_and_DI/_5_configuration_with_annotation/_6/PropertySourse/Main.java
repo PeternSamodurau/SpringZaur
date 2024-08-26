@@ -1,4 +1,4 @@
-package _1.IoC_and_DI._5_configuration_with_annotation.PropertySourse;
+package _1.IoC_and_DI._5_configuration_with_annotation._6.PropertySourse;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

@@ -1,15 +1,16 @@
-package _1.IoC_and_DI._6_Configuration_with_Java_code.Способ_1;
+package _1.IoC_and_DI._5_configuration_with_annotation._1.Component;
+
 
 import org.springframework.stereotype.Component;
 
 @Component("catBean")
-public class Cat implements Pet {
+public class Cat  {
 
     public Cat() {
         System.out.println("Cat bin is created");
     }
 
-    @Override
+
     public void say() {
         System.out.println("Meow-Meow");
     }

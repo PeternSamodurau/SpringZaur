@@ -10,7 +10,7 @@ public class Main {
         dog1.say();
         Dog dog2 = context.getBean("dogBean", Dog.class);
         dog2.say();
-        System.out.println("Переменные ссылаются на один и тот же объект? " + (dog1 == dog2)); //потому что scope="prototype"
+        System.out.println("Переменные ссылаются на один и тот же объект? " + (dog1 == dog2)); //false, потому что scope="prototype"
         System.out.println(dog1);
         System.out.println(dog2);
         context.close();

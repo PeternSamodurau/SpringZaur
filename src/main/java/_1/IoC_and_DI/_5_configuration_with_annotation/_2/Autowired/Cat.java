@@ -1,7 +1,6 @@
 package _1.IoC_and_DI._5_configuration_with_annotation._2.Autowired;
 
 import org.springframework.stereotype.Component;
-import _1.IoC_and_DI._1_inversion_of_control_.Pet;
 
 @Component("catBean")
 public class Cat implements Pet {

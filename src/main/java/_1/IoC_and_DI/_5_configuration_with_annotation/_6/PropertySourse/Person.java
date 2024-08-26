@@ -1,4 +1,4 @@
-package _1.IoC_and_DI._5_configuration_with_annotation.PropertySourse;
+package _1.IoC_and_DI._5_configuration_with_annotation._6.PropertySourse;
 
 import org.springframework.beans.factory.annotation.Value;
 import _1.IoC_and_DI._1_inversion_of_control_.Pet;
